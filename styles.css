@@ -1,24 +1,26 @@
 
 /* Your CSS Code here. */
-.box1{
-	width: 100px;
-	height:100px;
-	background-color:green;
-}
-.box2{
-	width: 100px;
-	height:100px;
-	background-color:red;
-}
-.box3{
-	width: 100px;
-	height:100px;
-	background-color:blue;
+/* Flexbox container */
+.holder {
+  display: flex;
+  flex-wrap: wrap; /* Items wrap to the next row */
+  justify-content: space-between; /* Items are spaced evenly with the first and last items touching the ends */
+  gap: 10px; /* Space between items */
 }
 
-.container{
-	display:flex;
-	flex-direction:row;
-	justify-content:space-between;
-	flex-wrap:wrap;
+/* Flexbox items */
+.item {
+  flex: 0 0 auto; /* Items don't grow or shrink */
+  width: calc(25% - 10px); /* Adjust width to fit four items per row with gap */
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  text-align: center;
+}
+
+/* Adjust width for smaller screens */
+@media (max-width: 768px) {
+  .item {
+    width: calc(50% - 10px); /* Adjust width to fit two items per row with gap */
+  }
 }
